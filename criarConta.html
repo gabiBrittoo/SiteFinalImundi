@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionando a foto da web -->
+    <link rel="icon" href="./img/WebLogo.png" />
+
+    <!-- Adicionando o nome da aba -->
+    <title>Cadastrar</title>
+
+    <!-- Linkando o css -->
+    <link rel="stylesheet" href="./css/criarConta.css">
+    <link rel="stylesheet" href="./css/menu.css">
+
+    <!-- Linkando os icons que serão utilizados no menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Início do menu -->
+    <header class="header"> <!-- Header equivale a um cabeçalho -->
+        <!-- Adicionando a logo do Imundi | alt descreve a imagem apresentada, para fornecer acessibilidade para pessoas com deficiências visuais e etc. -->
+        <a href="index.html" class="logo"> <img src="./img/LogoImundi.png" alt="Palavra 'I'mundi' escrita em preto e letras curvilíneas, no qual a letra 'u' se forma com a 'perna' final da letra 'm', e o planeta terra fica posicionado dentro daa letra 'u'"></a>
+
+        <!-- Criando a área de navegação do menu -->
+        <nav class="navbar">
+            <!-- Cada 'a' é um link de acesso a uma página diferente -->
+            <a href="index.html">Home</a>
+            <a href="compreAqui.html">Compre aqui</a>
+            <a href="sobreNos.html">Sobre nós</a>
+            <a href="jogoMemoria.html">Arcade</a>
+        </nav>
+
+        <!-- Adicionando os ícones para a navbar, acesso à área de compra e área de login -->
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <a href="compreAqui.html"><div id="cart-btn" class="fas fa-shopping-cart"> </div></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+        <!-- Criando a função de login -->
+        <form action="" class="login-form">
+            <h3>login</h3>
+            <!-- Área de email e senha -->
+            <input type="email" placeholder="Insira seu email" class="box">
+            <input type="password" placeholder="Insira sua senha" class="box">
+            <!-- Criando a função de cadastro do login -->
+            <div class="funcoes">
+                <input type="submit" value="Entrar" class="btn">
+                <p>Não possui uma conta? <a href="criarConta.html">Cadastre-se</a></p>
+            </div>
+        </form>
+
+    </header>
+    <!-- Fim do menu -->
+
+    <div class="container">
+        <div class="topo">
+            <center>
+                <h2>Criar Conta | Cadastrar</h2>
+            </center>
+        </div>
+        <!-- Criando o formulário de cadastro de conta -->
+        <form id="form" class="form">
+            <div class="form-control">
+                <label for="username">Nome do Usuário</label>
+                <input type="text" placeholder="Insira seu nome" id="username" /> <!-- Área destinada a preenchimento do nome -->
+                <i class="fas fa-check-circle"></i> <!-- Confirmação de que as informações seguem os padrões impostos -->
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small> <!-- Mensagem de erro -->
+            </div>
+            <div class="form-control">
+                <label for="username">Email</label>
+                <input type="email" placeholder="Insira seu email" id="email" /> <!-- Área destinada a preenchimento do email -->
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Senha</label>
+                <input type="password" placeholder="Insira sua senha" id="password" /> <!-- Área destinada a preenchimento da senha -->
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Confirmação de Senha</label>
+                <input type="password" placeholder="Confirme sua senha" id="password2" /> <!-- Área destinada a preenchimento da confirmação da senha-->
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <!-- Botão de confirmação do cadastro -->
+            <button>Cadastrar</button> 
+        </form>
+    </div>
+
+    <!-- Linkando o JavaScript -->
+    <script src="./js/criarConta.js"></script>
+    <script src="./js/menu.js"></script>
+
+</body>
+
+</html>

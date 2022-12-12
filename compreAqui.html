@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionando a foto da web -->
+    <link rel="icon" href="./img/WebLogo.png" />
+
+    <!-- Adicionando o nome da aba -->
+    <title>Compre Aqui</title>
+
+    <!-- Linkando o css -->
+    <link rel="stylesheet" href="./css/compreAqui.css" />
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <!-- Linkando os icons que serão utilizados no menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Início do menu -->
+    <header class="header"> <!-- Header equivale a um cabeçalho -->
+        <!-- Adicionando a logo do Imundi | alt descreve a imagem apresentada, para fornecer acessibilidade para pessoas com deficiências visuais e etc. -->
+        <a href="index.html" class="logo"> <img src="./img/LogoImundi.png" alt="Palavra 'I'mundi' escrita em preto e letras curvilíneas, no qual a letra 'u' se forma com a 'perna' final da letra 'm', e o planeta terra fica posicionado dentro daa letra 'u'"></a>
+
+        <!-- Criando a área de navegação do menu -->
+        <nav class="navbar">
+            <!-- Cada 'a' é um link de acesso a uma página diferente -->
+            <a href="index.html">Home</a>
+            <a href="compreAqui.html">Compre aqui</a>
+            <a href="sobreNos.html">Sobre nós</a>
+            <a href="jogoMemoria.html">Arcade</a>
+        </nav>
+
+        <!-- Adicionando os ícones para a navbar, acesso à área de compra e área de login -->
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div class="menu-openner"><span>0</span>🛒</div>
+        </div>
+
+    </header>
+    <!-- Fim do menu -->
+
+    <!-- Div onde ficará o banner inicial da página -->
+    <div class="heading">
+        <h1>Nossa Loja</h1> <!-- Introdução a página atual -->
+        <p> <a href="index.html">Home >></a> Compre Aqui </p> <!-- Link de retorno para a página principal -->
+    </div>
+
+    <!-- Início da função de compra -->
+    <div class="compra-content">
+        <div class="models">
+
+            <!-- Adicionando os produtos no site -->
+            <div class="produto-item">
+                <a href="">
+                    <div class="produto-item--img"><img src="" /></div> <!-- A imagem se encontra vazia pois será adicionada por meio do JavaScript -->
+                    <div class="produto-item--add">+</div> <!-- Método de adição ao carrinho -->
+                </a>
+                <div class="produto-item--price">R$ --</div> <!-- Preço -->
+                <div class="produto-item--name">--</div> <!-- Nome -->
+                <div class="produto-item--desc">--</div> <!-- Descrição -->
+            </div>
+
+            <!-- Formatando os produto, uma vez que já se encontram dentro do carrinho -->
+            <div class="cart--item">
+                <img src="" />
+                <div class="cart--item-nome">--</div> <!-- Nome -->
+                <!-- Divisão de adição e subtração da quantidade do alimento -->
+                <div class="cart--item--qtarea">
+                    <button class="cart--item-qtmenos">-</button> <!-- Para diminuir a quantidade -->
+                    <div class="cart--item--qt">1</div> <!-- Quantidade mínima/padrão -->
+                    <button class="cart--item-qtmais">+</button> <!-- Para aumentar a quantidade -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Div de definição de qual a conteúdo principal da página -->
+        <main>
+            <div class="produto-area"></div>
+        </main>
+
+        <!-- Aside do carrinho de compras -->
+        <!-- Definição do aside: bloco de conteúdo que faz referência ao conteúdo principal que o cerca, 
+        pode estar ou não em uma barra lateral (sidebar) exibindo informações contextuais, assuntos relacionados, 
+        conteúdo publicitário ou um grupo de navegação secundária -->
+        <aside>
+            <div class="cart--area">
+                <div class="menu-closer">❌</div> <!-- Função de fechar o aside -->
+                <h1>Seu Pedido</h1>
+                <div class="cart"></div>
+                <!-- Definindo os detalhes do aside/carrinho -->
+                <div class="cart--details">
+                    <div class="cart--totalitem subtotal">
+                        <span>Subtotal</span>
+                        <span>R$ --</span> <!-- Valor estipulado do subtotal -->
+                    </div>
+                    <div class="cart--totalitem total big">
+                        <span>Total</span>
+                        <span>R$ --</span> <!-- Valor total da compra -->
+                    </div>
+                    <!-- Botão com a função de finalização da compra -->
+                    <div class="cart--finalizar"><a href="finalizarCompra.html">Finalizar Compra</a></div>
+                </div>
+            </div>
+        </aside>
+        <!-- Fim do aside do carrinho de compras -->
+
+        <br><br><br>
+
+        <!-- Adicionando a área de seleção dos dados do produto -->
+        <div class="produtoWindowArea">
+            <div class="produtoWindowBody">
+                <div class="produtoInfo--cancelMobileButton">Voltar</div>
+                <div class="produtoBig">
+                    <img src="" /> <!-- Imagem -->
+                </div>
+                <div class="produtoInfo">
+                    <h1>--</h1> <!-- Nome -->
+                    <div class="produtoInfo--desc">--</div>
+                    <div class="produtoInfo--sizearea">
+                        <!-- Para adaptar ao nosso plano inicial, definimos que ao invés de tamanho, o cliente poderia escolher o 
+                        tipo de embalagem que ele gostaria de receber sua comida -->
+                        <div class="produtoInfo--sector">Tipo de Embalagem</div>
+                        <div class="produtoInfo--sizes">
+                            <div data-key="P" class="produtoInfo--size"><span>--</span></div> <!-- Papel -->
+                            <div data-key="I" class="produtoInfo--size"><span>--</span></div> <!-- Isopor -->
+                            <div data-key="F" class="produtoInfo--size selected"><span>--</span></div> <!-- Folha de bananeira -->
+                        </div>
+                    </div>
+                    <div class="produtoInfo--pricearea">
+                        <div class="produtoInfo--sector">Preço</div>
+                        <div class="produtoInfo--price">
+                            <div class="produtoInfo--actualPrice">R$ --</div> <!-- Preço -->
+                            <!-- Divisão de adição e subtração da quantidade do alimento -->
+                            <div class="produtoInfo--qtarea">
+                                <button class="produtoInfo--qtmenos">-</button> <!-- Para diminuir a quantidade -->
+                                <div class="produtoInfo--qt">1</div> <!-- Quantidade padrão -->
+                                <button class="produtoInfo--qtmais">+</button> <!-- Para aumentar a quantidade -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="produtoInfo--addButton">Adicionar ao carrinho</div> <!-- Botão de adição ao carrinho -->
+                    <div class="produtoInfo--cancelButton">Cancelar</div> <!-- Botão de cancelamento da ação -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer> <!-- O footer é o rodapé do nosso site, contendo informações básicas e importantes da criação do mesmo -->
+        <div class="footer-content">
+            <!-- Nosso footer será animado com ondas, logo abaixo estaremos dividindo as animações em 4 diferentes ondas -->
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+            <!-- Ícone que será utilizado para demonstrar nossas redes sociais -->
+            <ul class="social-icon">
+                <li><a href="https://www.instagram.com/iimundii/"><ion-icon name="logo-instagram"></ion-icon></a></li> <!-- Linkando o instagram do I'mundi -->
+            </ul>
+            <!-- Lista de acesso as páginas do site -->
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="compreAqui.html">Compre Aqui</a></li>
+                <li><a href="sobreNos.html">Sobre Nós</a></li>
+                <li><a href="jogoMemoria.html">Arcade</a></li>
+            </ul>
+            <!-- Parágrado de informações essenciais do site -->
+            <p>Divorced Squad | Projeto de Finalização do 2° Termo | 2022</p>
+        </div>
+    </footer>
+    <!-- Fim do footer -->
+
+    <!-- Linkando o JavaScript -->
+    <script src="./js/produtos.js"></script>
+    <script src="./js/compreAquiScript.js"></script>
+    <script src="./js/menu.js"></script>
+
+    <!-- Linkando os ícones utilizados no footer -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionando a foto da web -->
+    <link rel="icon" href="./img/WebLogo.png" />
+
+    <!-- Adicionando o nome da aba -->
+    <title>Arcade</title>
+
+    <!-- Linkando o css -->
+    <link rel="stylesheet" href="./css/jogoMemoria.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <!-- Linkando os icons que serão utilizados no menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Início do menu -->
+    <header class="header"> <!-- Header equivale a um cabeçalho -->
+        <!-- Adicionando a logo do Imundi | alt descreve a imagem apresentada, para fornecer acessibilidade para pessoas com deficiências visuais e etc. -->
+        <a href="index.html" class="logo"> <img src="./img/LogoImundi.png" alt="Palavra 'I'mundi' escrita em preto e letras curvilíneas, no qual a letra 'u' se forma com a 'perna' final da letra 'm', e o planeta terra fica posicionado dentro daa letra 'u'"></a>
+
+        <!-- Criando a área de navegação do menu -->
+        <nav class="navbar">
+            <!-- Cada 'a' é um link de acesso a uma página diferente -->
+            <a href="index.html">Home</a>
+            <a href="compreAqui.html">Compre aqui</a>
+            <a href="sobreNos.html">Sobre nós</a>
+            <a href="jogoMemoria.html">Arcade</a>
+        </nav>
+
+        <!-- Adicionando os ícones para a navbar, acesso à área de compra e área de login -->
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <a href="compreAqui.html"><div id="cart-btn" class="fas fa-shopping-cart"> </div></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+        <!-- Criando a função de login -->
+        <form action="" class="login-form">
+            <h3>login</h3>
+            <!-- Área de email e senha -->
+            <input type="email" placeholder="Insira seu email" class="box">
+            <input type="password" placeholder="Insira sua senha" class="box">
+            <!-- Criando a função de cadastro do login -->
+            <div class="funcoes">
+                <input type="submit" value="Entrar" class="btn">
+                <p>Não possui uma conta? <a href="criarConta.html">Cadastre-se</a></p>
+            </div>
+        </form>
+
+    </header>
+    <!-- Fim do menu -->
+
+    <!-- Div onde ficará o banner inicial da página -->
+    <div class="heading">
+        <h1>Jogo da Memória</h1> <!-- Introdução a página atual -->
+        <p> <a href="index.html">Home >></a> Arcade </p> <!-- Link de retorno para a página principal -->
+    </div>
+
+    <section class="about">
+        <div class="content">
+            <h3>Jogo da Memória</h3>
+            <p>Esperar pelo seu pedido pode ser cansativo, não é mesmo?
+                Por isso o Imundi decidiu disponibilizar um jogo da memória para que esta
+                espera possa ser uma forma de entreterimento!
+                Agradecemos sua paciência pela comida quentinha que logo logo chegará até seu prato ;)
+            </p>
+        </div>
+    </section>
+
+    <body>
+        <!-- Aplicando a função de tabela/grid na página -->
+        <div class="grid"></div>
+    </body>
+
+    <!-- Footer -->
+    <footer> <!-- O footer é o rodapé do nosso site, contendo informações básicas e importantes da criação do mesmo -->
+        <div class="footer-content">
+            <!-- Nosso footer será animado com ondas, logo abaixo estaremos dividindo as animações em 4 diferentes ondas -->
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+            <!-- Ícone que será utilizado para demonstrar nossas redes sociais -->
+            <ul class="social-icon">
+                <li><a href="https://www.instagram.com/iimundii/"><ion-icon name="logo-instagram"></ion-icon></a></li> <!-- Linkando o instagram do I'mundi -->
+            </ul>
+            <!-- Lista de acesso as páginas do site -->
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="compreAqui.html">Compre Aqui</a></li>
+                <li><a href="sobreNos.html">Sobre Nós</a></li>
+                <li><a href="jogoMemoria.html">Arcade</a></li>
+            </ul>
+            <!-- Parágrado de informações essenciais do site -->
+            <p>Divorced Squad | Projeto de Finalização do 2° Termo | 2022</p>
+        </div>
+    </footer>
+    <!-- Fim do footer -->
+
+    <!-- Linkando o JavaScript -->
+    <script src="./js/jogo.js"></script>
+    <script src="./js/menu.js"></script>
+
+    <!-- Linkando os ícones utilizados no footer -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+</body>
+
+</html>
