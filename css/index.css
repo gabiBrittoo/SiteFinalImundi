@@ -1,0 +1,6 @@
+body {
+    background: url(./img/FundoTres.png) no-repeat; /* Adicionado a imagem de fundo e definindo que ela não deve se repetir */
+    background-size: cover; /* Tamanho do fundo deve cobrir a tela inteira */
+    background-position: center; /* A imagem deve se localizar no centro da página */
+    background-attachment: fixed; /* A imagem de fundo deve ficar fixa mesmo com ação do mouse */
+}

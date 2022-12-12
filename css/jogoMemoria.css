@@ -1,0 +1,132 @@
+/* Importando a fonte que será utilizada no site | Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+/*Adicionando uma imagem de fundo fixa e tamanho que cubra todo a tela*/
+body{
+    font-family: 'Poppins', sans-serif; /* Fonte */
+    background: url(./img/FundoTres.png) no-repeat; /* Imagem do fundo | sem repetição */
+    background-size: cover; /* Tamanho de cobertura máxima da página */
+    background-position: center; /* Imagem localizada no centro */
+    background-attachment: fixed; /* Imagem fixa */
+}
+
+.about {
+    /* Display equivale ao layout */
+    display: -webkit-box; /* Layout de caixas | flex */
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center; /* O layout deve estar centralizado */
+    -ms-flex-align: center; 
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; /* Quebra as caixas em linhas */
+    gap: 1.5rem;
+}
+
+/* Definindo as medidas das caixas do layout */
+.about .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 40rem;
+    flex: 1 1 40rem;
+}
+
+/* DESIGN DO CONTEÚDO */
+.about .content span {
+    color: #bac34e;
+    font-size: 2.5rem;
+}
+
+.about .content h3 {
+    color: #222;
+    font-size: 3rem;
+    padding-top: .5rem;
+}
+
+.about .content p {
+    color: #666;
+    font-size: 1.4rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+/* DESIGN DAS LINHAS E COLUNAS */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Repetição de 5 itens por linha */
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* CARTAS */
+.card{
+    aspect-ratio: 6.5/7; /* Proporção da imagem */
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+/* FRENTE DAS CARTAS */
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(255, 233, 186);
+    border-radius: 5px;
+    transition: all 400ms ease;
+}
+
+.front{
+    transform: rotateY(180deg); /* Rotação de 180° quando clicada uma carta */
+}
+
+/* COSTAS DAS CARTAS */
+.back{
+    background-image: url(../img/ImagensCards/CardCapa.png);
+    backface-visibility: hidden; /* Ao virada para frente as costas deixam de ser visíveis */
+}
+
+.reveal-card{
+    transform: rotateY(180deg); /* Uma carta é revelada quando girada em 180°, após ser clicada */
+}
+
+/* CARTAS DESATIVADAS */
+.disabled-card{
+    filter: saturate(0); /* Saturação */
+    opacity: 0.5; /* Opacidade */
+}
+
+/* DEFININDO O DESIGN E FUNÇÕES DA ÁREA DO BANNER INICIAL DA PÁGINA */
+.heading {
+    background: url(../img/ImagensAtualizadas/FundoQuatro.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+}
+
+.heading h1 {
+    color: #222;
+    font-size: 4rem;
+}
+
+.heading p {
+    padding-top: 1rem;
+    font-size: 2rem;
+    color: #666;
+}
+
+.heading p a {
+    color: #222;
+    padding-right: .5rem;
+}
+
+.heading p a:hover {
+    color: #bac34e;
+}

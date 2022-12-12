@@ -1,0 +1,640 @@
+/* Importando a fonte que será utilizada no site | Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+body {
+    background: url(./img/FundoTres.png) no-repeat; /* Imagem do fundo | sem repetição */
+    background-size: cover; /* Tamanho de cobertura máxima da página */
+    background-position: center; /* Imagem localizada no centro */
+    background-attachment: fixed; /* Imagem fixa */
+    min-height: 100vh; /* O valor de min-height atribuído ao elemento body dá a ele uma altura inicial que corresponde ao elemento HTML */
+}
+
+.compra-content {
+    box-sizing: border-box; /* O box-sizing com o valor border-box faz com que o navegador não calcule a dimensão de um elemento somando bordas e margens com altura e largura */
+    font-family: 'Poppins', sans-serif; /* Fonte */
+    font-size: 15px; /* Tamanho da fonte */
+    display: flex; /* Layout flexível a página */
+    margin: 0; /* Margem */
+    min-height: 100vh;
+}
+
+/* DEFININDO O RODAPÉ */
+.header .navbar a {
+    font-size: 1.7rem;
+    color: #666;
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover { /* Hover, condiz quando o mouse está sobre o objeto */
+    color: #bac34e;
+}
+
+/* FIM DA DEFINIÇÃO DO RODAPÉ */
+
+/* Div models */
+.models {
+    display: none;
+}
+
+/* DEFININDO O DESIGN E FUNÇÕES DO MENU-OPENNER E MENU-CLOSER */
+.menu-openner {
+    margin-right: 5px; /* Tamanho da margem direita */
+    font-size: 15px;
+    padding: 5px 20px; /* Distância do conteúdo com as bordas */
+    cursor: pointer; /* Definindo qual será o cursor */
+}
+
+.menu-openner span {
+    margin-right: 10px; /* Tamanho da margem direita */
+}
+
+.menu-closer {
+    width: 32px; /* Largura */
+    height: 32px; /* Altura */
+    display: none;
+    font-size: 30px;
+}
+
+/* DEFININDO O DESIGN E FUNÇÕES DO ASIDE | JANELA LATERAL */
+aside {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px); /* Filtro de borrão na área indicada */
+    width: 0vw;
+    font-family: 'Poppins', sans-serif;
+    transition: all ease .2s; /* Transição */
+    overflow-x: hidden; /* Quando não ativado, fica escondido */
+}
+
+/* Aside ativado */
+aside.show {
+    width: 30vw;
+}
+
+/* DEFININDO O DESIGN E FUNÇÕES DA ÁREA DO CARRINHO */
+.cart--area {
+    margin-top: 30px; /* Margem com o topo da página */
+    padding: 20px;
+}
+
+.cart--area h1 {
+    display: relative;
+    margin-top: 70px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+h1,
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center; /* Alinhamento do texto */
+}
+
+.produto-area {
+    display: -ms-grid;
+    display: grid; /* Display em forma de grade */
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit]; /* Tamanho e definição das colunas */
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Define que toda repetição de coluna deve ser igual */
+    gap: 1.5rem; /* Espaçamento da linha para a coluna */
+}
+
+/* DEFININDO OS DETALHES DE CADA PRODUTO | ITEM DA TABELA/GRADE FORMADA */
+.produto-item {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 30px auto 50px auto;
+    position: relative;
+    background: #f3f3f3;
+    text-align: center;
+    overflow: hidden;
+}
+
+.produto-item:hover .produto-item--add {
+    top: 0;
+}
+
+.produto-item .produto-item--add .fas fa-shopping-cart {
+    font-size: 2rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    background: #fff;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    color: #666;
+}
+
+.produto-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.produto-item--img {
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.produto-item--img img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.produto-item--add {
+    position: absolute;
+    top: -105%;
+    left: 0;
+    height: 30rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: rgba(243, 243, 243, 0.8);
+    gap: 1rem;
+    transition: 1s ease;
+    font-size: 60px;
+    color: #999;
+}
+
+.produto-item a:hover .produto-item--add {
+    background-color: rgba(243, 243, 243, 0.8);
+    color: #bac34e;
+}
+
+.produto-item--price {
+    font-size: 15px;
+    color: #333;
+    padding: 1rem 0;
+}
+
+.produto-item--name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.produto-item--desc {
+    font-size: 13px;
+    color: #555;
+    margin: auto 30px 10px 20px;
+}
+
+/* DEFININDO O DESIGN E FUNÇÕES DA ÁREA DE DEFINIÇÃO DE DETALHES DO PRODUTO */
+
+.produtoWindowArea {
+    position: fixed;
+    left: 0;
+    top: 100px;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.produtoWindowBody {
+    width: 900px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    margin: 20px 0px;
+}
+
+.produtoBig {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produtoBig--back {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+}
+
+.produtoBig img {
+    height: 400px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+.produtoInfo {
+    flex: 1;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 50px;
+}
+
+.produtoInfo h1 {
+    margin: 50px 50px auto auto;
+}
+
+.produtoInfo .produtoInfo--desc {
+    font-size: 15px;
+    color: #999;
+    margin: 10px 30px auto auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.produtoInfo--sector {
+    color: #CCC;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.produtoInfo--sizes {
+    display: inline-flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.produtoInfo--size {
+    padding: 10px 15px;
+    color: #000;
+    background-color: #EEE;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.produtoInfo--size:hover {
+    background-color: #CCC;
+    transition: .4s linear;
+}
+
+.produtoInfo--size.selected {
+    background-color: #bac34e;
+    color: #FFF;
+}
+
+.produtoInfo--size.selected span {
+    color: #ffffff;
+}
+
+.produtoInfo--size span {
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+}
+
+.produtoInfo--price {
+    display: flex;
+    align-items: center;
+}
+
+.produtoInfo--actualPrice {
+    font-size: 28px;
+    margin-right: 30px;
+}
+
+.produtoInfo--qtarea {
+    display: inline-flex;
+    background-color: #EEE;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.produtoInfo--qtarea button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: #333;
+}
+
+.produtoInfo--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: #000;
+}
+
+.produtoInfo--addButton {
+    margin-top: 30px;
+    padding: 20px 30px;
+    background-color: #bac34e;
+    color: #FFF;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.produtoInfo--addButton:hover {
+    background-color: #222;
+    transition: .4s linear;
+}
+
+.produtoInfo--cancelButton {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.produtoInfo--cancelButton:hover {
+    color: #bac34e;
+    transition: .4s linear;
+}
+
+.produtoInfo--cancelMobileButton {
+    display: none;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+/* DEFININDO O DESIGN E FUNÇÕES DO CARRINHO */
+
+.cart {
+    margin-bottom: 20px;
+}
+
+.cart--item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.cart--item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.cart--item-nome {
+    flex: 1;
+}
+
+.cart--item--qtarea {
+    display: inline-flex;
+    background-color: #EEE;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.cart--item--qtarea button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: #333;
+}
+
+.cart--item--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: #000;
+}
+
+.cart--totalitem {
+    padding: 15px 0;
+    border-top: 1px solid #bac34e;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.cart--totalitem span:first-child {
+    font-weight: bold;
+}
+
+.cart--totalitem.big {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.cart--finalizar {
+    padding: 20px 30px;
+    background-color: #bac34e;
+    color: #FFF;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    transition: all ease .2s;
+}
+
+.cart--finalizar:hover {
+    background-color: #222;
+    transition: all ease .8s;
+}
+
+.cart--finalizar a:hover {
+    color: rgb(255, 255, 255);
+    transition: all ease .8s;
+}
+
+/* REALIZANDO A MEDIA DA PÁGINA */
+/* A media é basicamente a renderização do conteúdo se adapte a diferentes condições, como a resolução da tela | No caso, estamos deixando o site responsivo*/
+
+@media (max-width:1000px) {
+    .produto-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:840px) {
+    body {
+        flex-direction: column;
+    }
+
+    .produto-area {
+        display: block;
+    }
+
+    .produto-item {
+        max-width: 100%;
+    }
+
+    header {
+        display: flex;
+    }
+
+    aside {
+        width: auto;
+        position: fixed;
+        left: 100vw;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transition: all ease .2s;
+    }
+
+    aside.show {
+        width: auto;
+    }
+
+    .cart--area {
+        width: 100vw;
+    }
+
+    .menu-closer {
+        display: block;
+    }
+
+    .produtoWindowArea {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .produtoWindowBody {
+        width: 100vw;
+        display: block;
+        padding: 20px;
+        box-shadow: none;
+        margin: 10px auto 50px auto;
+    }
+
+    .produtoBig img {
+        width: 75%;
+        height: auto;
+    }
+
+    .produtoInfo h1 {
+        margin-top: 20px;
+    }
+
+    .produtoInfo--qtarea {
+        height: 60px;
+    }
+
+    .produtoInfo--qtarea button {
+        font-size: 25px;
+        padding: 0px 25px;
+    }
+
+    .produtoInfo--qt {
+        line-height: 60px;
+        font-size: 20px;
+    }
+
+    .produtoInfo--addButton {
+        font-size: 20px;
+        display: block;
+        text-align: center;
+        margin: 30px auto;
+    }
+
+    .produtoInfo--cancelButton {
+        display: none;
+    }
+
+    .produtoInfo--cancelMobileButton {
+        display: block;
+    }
+
+}
+
+@media (max-width:450px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu-openner {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:380px) {
+    header h1 {
+        font-size: 1rem;
+    }
+
+    .menu-openner {
+        font-size: 1.5rem;
+    }
+}
+
+/* Fim do ajuste da media */
+
+#img-logo {
+    width: 50px;
+}
+
+/* DEFININDO O DESIGN E FUNÇÕES DA ÁREA DO BANNER INICIAL DA PÁGINA */
+
+.heading {
+    background: url(./img/FundoQuatro.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+}
+
+.heading h1 {
+    color: #222;
+    font-size: 4rem;
+}
+
+.heading p {
+    padding-top: 1rem;
+    font-size: 2rem;
+    color: #666;
+}
+
+.heading p a {
+    color: #222;
+    padding-right: .5rem;
+}
+
+.heading p a:hover {
+    color: #bac34e;
+}
+
+/* ÁREA DO TÍTULO DAS SEÇÕES REFERENTES */
+.title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 1.2rem 0;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    color: #222;
+}
+
+.title span {
+    color: #bac34e;
+    padding-left: .7rem;
+}
+
+.title a {
+    margin-left: auto;
+    color: #666;
+    font-size: 1.5rem;
+}
+
+.title a:hover {
+    color: #bac34e;
+}
+
