@@ -47,6 +47,8 @@ function checkInputs() {
 		setErrorFor(password2, 'As senhas não condizem'); /* A confirmação de senha deve ser igual a senha inserida, senão dá erro */
 	} else{
 		setSuccessFor(password2); /* Caso preenchido, houve sucesso em submeter o cadastro */
+		setSuccessFor(email);
+		alert(`Cadastro efetuado com sucesso ;)`)
 	}
 }
 
